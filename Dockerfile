@@ -1,11 +1,6 @@
-FROM ubuntu
+FROM ubuntu:latest
 MAINTAINER = Jason M. Mills <jmmills@cpan.org>
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update
-RUN apt-get upgrade -y
-
-RUN local-gen en_US.UTF-8
-RUN dpkg-reconfigure locales
 
 RUN apt-get install -y pwgen
 RUN apt-get install -y git-core
