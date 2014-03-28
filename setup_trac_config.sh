@@ -19,3 +19,8 @@ setup_accountmanager() {
     trac-admin /trac config set account-manager password_store SessionStore 
     trac-admin /trac config set account-manager reset_password false
 }
+
+setup_admin_user() {
+    trac-admin /trac session add admin admin root@localhost
+    trac-admin /trac permission add admin TRAC_ADMIN
+}
