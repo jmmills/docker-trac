@@ -14,5 +14,7 @@ ADD setup_trac.sh /.setup_trac.sh
 ADD run.sh /run.sh
 ADD trac_logo.png /var/www/trac_logo.png
 
+Add set_trac_user_password.py /usr/local/bin/
+
 EXPOSE 8000
 CMD ["/run.sh"]
