@@ -24,7 +24,9 @@ ADD setup_trac.sh /.setup_trac.sh
 ADD run.sh /run.sh
 ADD trac_logo.png /var/www/trac_logo.png
 
-Add set_trac_user_password.py /usr/local/bin/
+ADD set_trac_user_password.py /usr/local/bin/
+RUN chmod 755 /usr/local/bin/set_trac_user_password.py
+
 
 EXPOSE 8000
 CMD ["/run.sh"]
