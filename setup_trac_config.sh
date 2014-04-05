@@ -24,17 +24,17 @@ setup_admin_user() {
     trac-admin /trac session add admin admin root@localhost
     trac-admin /trac permission add admin TRAC_ADMIN
 
-	if [ ! -f /.trac_admin_password ]
-	then
-	    TRAC_PASS=$(pwgen -1 10 -s)
-	    _S=$(printf '=%0.s' {1..50})
-	    set_trac_user_password.py /trac admin ${TRAC_PASS}
-	    echo $_S
-	    echo Trac admin login
-        echo -e "\tUser: admin"
-        echo -e "\tPassword: ${TRAC_PASS}"
-	    echo $_S
-	    echo ${TRAC_PASS} >/.trac_admin_password
-	fi
+    if [ ! -f /.trac_admin_password ]
+    then
+        TRAC_PASS=$(pwgen -1 10 -s)
+        _S=$(printf '=%0.s' {1..50})
+        set_trac_user_password.py /trac admin ${TRAC_PASS}
+        echo $_S
+        echo Trac admin login
+            echo -e "\tUser: admin"
+            echo -e "\tPassword: ${TRAC_PASS}"
+        echo $_S
+        echo ${TRAC_PASS} >/.trac_admin_password
+    fi
 
 }
