@@ -11,7 +11,7 @@ setup_trac() {
         setup_accountmanager
         setup_admin_user
         trac-admin /trac config set logging log_type stderr
-        [ -f /var/www/trac_logo.png ] && cp -v /trac/htdocs/your_project_logo.png
+        [ -f /var/www/trac_logo.png ] && cp -v /var/www/trac_logo.png /trac/htdocs/your_project_logo.png
     fi
 }
 

@@ -8,6 +8,16 @@ RUN apt-get install -y trac
 RUN apt-get install -y trac-git
 RUN apt-get install -y trac-accountmanager
 RUN apt-get install -y trac-customfieldadmin
+RUN apt-get install -y trac-xmlrpc
+RUN apt-get install -y trac-wikiprint
+RUN apt-get install -y trac-wysiwyg
+RUN apt-get install -y trac-mastertickets
+RUN apt-get install -y trac-tags
+RUN apt-get install -y trac-diavisview
+RUN apt-get install -y trac-announcer
+RUN apt-get install -y trac-batchmodify
+RUN apt-get install -y trac-graphviz
+RUN apt-get install -y python-flup
 
 ADD setup_trac_config.sh /.setup_trac_config.sh
 ADD setup_trac.sh /.setup_trac.sh
