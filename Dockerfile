@@ -28,5 +28,5 @@ ADD set_trac_user_password.py /usr/local/bin/
 RUN chmod 755 /usr/local/bin/set_trac_user_password.py
 
 
-EXPOSE 8000
+EXPOSE 80
 CMD ["/run.sh"]

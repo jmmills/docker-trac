@@ -18,9 +18,23 @@ setup_trac() {
 setup_repo() {
     if [ ! -d /repo.git ]
     then 
+        git config --global user.name "Trac Admin"
+        git config --global user.email trac@localhost
+
         mkdir /repo.git
         pushd /repo.git
-        git init --bare
+            git init --bare
+        popd
+
+        pushd /tmp
+            git clone --no-hardlinks /repo.git repo
+            pushd repo
+                echo repository init >README
+                git add README
+                git commit README -m "initial commit"
+                git push origin master
+            popd
+            rm -rf repo
         popd
     fi
 }
